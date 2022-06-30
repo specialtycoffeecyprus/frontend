@@ -1,0 +1,7 @@
+*.sh
+.env.local
+.idea
+dist
+http-client.*
+http-request.*
+node_modules

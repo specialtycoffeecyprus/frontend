@@ -1,0 +1,25 @@
+{
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "name": "Specialty Coffee in Cyprus",
+  "short_name": "Specialty Coffee in Cyprus",
+  "start_url": "/?utm_source=homescreen",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "type": "image/svg",
+      "sizes": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

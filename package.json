@@ -1,0 +1,17 @@
+{
+  "name": "specialty-frontend",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2",
+    "@googlemaps/js-api-loader": "^1",
+    "@googlemaps/markerclusterer": "^2",
+    "dotenv": "^16",
+    "normalize.css": "^8"
+  }
+}
