@@ -8,10 +8,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^2",
     "@googlemaps/js-api-loader": "^1",
     "@googlemaps/markerclusterer": "^2",
     "dotenv": "^16",
-    "normalize.css": "^8"
+    "normalize.css": "^8",
+    "vite": "^2",
+    "vite-plugin-radar": "*"
   }
 }

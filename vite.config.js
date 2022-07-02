@@ -1,13 +1,27 @@
-const {resolve} = require('path')
-const {defineConfig} = require('vite')
+import {resolve} from 'path'
+import {defineConfig, loadEnv} from 'vite';
+import ViteRadar from 'vite-plugin-radar'
 
-module.exports = defineConfig({
-    build: {
-        rollupOptions: {
-            input: {
-                main: resolve(__dirname, 'index.html'),
-                about: resolve(__dirname, 'about/index.html')
+export default mode => {
+    process.env = {...process.env, ...loadEnv(mode, process.cwd())};
+
+    return defineConfig({
+        build: {
+            rollupOptions: {
+                input: {
+                    main: resolve(__dirname, 'index.html'),
+                    about: resolve(__dirname, 'about/index.html')
+                }
             }
-        }
-    }
-})
+        },
+        plugins: [
+            ViteRadar({
+                gtm: [
+                    {
+                        id: process.env.VITE_GTM_ID
+                    }
+                ],
+            }),
+        ],
+    });
+}
