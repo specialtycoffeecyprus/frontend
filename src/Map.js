@@ -7,7 +7,7 @@ export default class Map {
     map = {
         object: {},
         apiKey: import.meta.env.VITE_MAP_API_KEY,
-        container: document.getElementById(import.meta.env.VITE_MAP_CONTAINER_ID),
+        container: document.getElementById('map'),
         center: {
             latitude: parseFloat(import.meta.env.VITE_MAP_CENTER_LATITUDE),
             longitude: parseFloat(import.meta.env.VITE_MAP_CENTER_LONGITUDE),
