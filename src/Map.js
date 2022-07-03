@@ -1,11 +1,12 @@
+import ItemDto from "./ItemDto";
+
 export default class Map {
-    api = {};
     loader = {};
     infowindow = {};
     placesService = {};
     markerClusterer = {};
+    dataUrl = import.meta.env.VITE_DATA_API_URL;
     map = {
-        object: {},
         apiKey: import.meta.env.VITE_MAP_API_KEY,
         container: document.getElementById('map'),
         center: {
@@ -16,32 +17,21 @@ export default class Map {
     };
 
 
-    constructor(api, loader, controls, markerClusterer) {
-        this.api = api;
+    constructor(loader, controls, markerClusterer) {
         this.loader = loader;
         this.markerClusterer = markerClusterer;
 
-        Promise.all([
-            this.loadMap(),
-            this.api.index(),
-        ]).then(([map, data]) => {
-            this.map.object = map;
-
+        this.loadMap().then(async map => {
             this.infowindow = new google.maps.InfoWindow();
-
-            this.placesService = new google.maps.places.PlacesService(this.map.object);
+            this.placesService = new google.maps.places.PlacesService(map);
 
             map.controls[google.maps.ControlPosition.TOP_CENTER].push(controls.getControls());
 
-            this.run(data.data)
+            const features = await this.loadData(this.dataUrl, map);
+            const markers = this.createMarkers(features, map);
+
+            new this.markerClusterer({map: map, markers: markers});
         })
-    }
-
-
-    run(data) {
-        const markers = this.createMarkers(data, this.map.object)
-
-        new this.markerClusterer({map: this.map.object, markers: markers});
     }
 
 
@@ -64,47 +54,69 @@ export default class Map {
     };
 
 
-    createMarkers(data, map) {
-        return data.map(item => {
-            const marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(...item.position)});
+    loadData(url, map) {
+        return new Promise((resolve) => {
+                map.data.setMap(null)
 
-            marker.addListener('click', async () => {
-                const details = await this.loadDetails(item);
-                this.showInfoWindow(details, marker, map)
-            });
+                map.data.loadGeoJson(url, {}, (features) => {
+                    resolve(features)
+                })
+            }
+        )
+    }
+
+
+    createMarkers(features, map) {
+        return features.map(feature => {
+            const details = new ItemDto(
+                feature.getProperty('placeId'),
+                feature.getProperty('name'),
+                feature.getProperty('description')
+            );
+
+            const marker = new google.maps.Marker({position: feature.getGeometry().get()});
+
+            marker.addListener('click', async () => this.showInfoWindow(await this.enrichDetails(details), marker.position, map));
 
             return marker;
-        })
-    };
+        });
+    }
 
 
-    async loadDetails(item) {
-        let details = sessionStorage.getItem(item.position.join());
+    async enrichDetails(itemDto) {
+        let details = sessionStorage.getItem(itemDto.placeId);
 
-        if (details === null) {
-            details = await this.loadDetailsFromProvider(item);
-            sessionStorage.setItem(item.position.join(), JSON.stringify(details))
-
-            return details
+        if (details !== null) {
+            details = JSON.parse(details);
+        } else {
+            details = await this.loadDetailsFromProvider(itemDto.placeId);
+            sessionStorage.setItem(itemDto.placeId, JSON.stringify(details))
         }
 
-        return JSON.parse(details);
+        if (details === null) {
+            return itemDto
+        }
+
+        itemDto.formattedAddress = details.formatted_address
+        itemDto.url = details.url
+
+        return itemDto
     };
 
 
-    loadDetailsFromProvider(item) {
+    loadDetailsFromProvider(placeId) {
         const request = {
-            placeId: item.placeId,
+            placeId: placeId,
             fields: ['formatted_address', 'url'],
         }
 
         return new Promise((resolve) => {
                 this.placesService.getDetails(request, (place, status) => {
                     if (place && status === google.maps.places.PlacesServiceStatus.OK) {
-                        item.formatted_address = place.formatted_address
-                        item.url = place.url
-
-                        resolve(item)
+                        resolve({
+                            formatted_address: place.formatted_address,
+                            url: place.url
+                        })
                     }
                 })
             }
@@ -112,17 +124,17 @@ export default class Map {
     };
 
 
-    showInfoWindow(item, marker, map) {
+    showInfoWindow(itemDto, position, map) {
         this.infowindow.setContent(`
-        <div class="poi-info-window">
-            <p class="title full-width">${item.name}</p>
-            <p class="description full-width">${item.description}</p>
-            <p class="address full-width">${item.formatted_address}</p>
-            <p class="view-link"><a href="${item.url}" target="_blank">View on Google Maps</a></p>
-        </div>`
-        )
+            <div class="poi-info-window">
+                <p class="title full-width">${itemDto.name}</p>
+                <p class="description full-width">${itemDto.description}</p>
+                <p class="address full-width">${itemDto.formattedAddress}</p>
+                <p class="view-link"><a href="${itemDto.url}" target="_blank">View on Google Maps</a></p>
+            </div>
+        `)
 
-        this.infowindow.setPosition(marker.position)
+        this.infowindow.setPosition(position)
         this.infowindow.setOptions({pixelOffset: {height: -42}})
         this.infowindow.open(map)
     };
