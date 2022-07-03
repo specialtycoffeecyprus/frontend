@@ -1,0 +1,31 @@
+name: build with Vite
+
+on:
+  push:
+    branches: 
+    - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      VITE_MAP_API_KEY: ${{ secrets.MAP_API_KEY }}
+      VITE_DATA_API_URL: /cafes.json
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        cache: 'npm'
+
+    - run: |
+        npm ci
+        npm run build
+        
+    - uses: actions/upload-artifact@v3
+      with:
+        path: dist/
+        
