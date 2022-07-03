@@ -6,8 +6,7 @@
       "type": "Feature",
       "properties": {
         "name": "Paul's Coffee Roasters",
-        "description": "We source, roast & brew specialty coffee in-store and we have been on the specialty coffee map since 2018. We love great coffee as much as beautiful design, and we cherish good chats with all coffee\/book\/conversation lovers. It all starts with a warm hello and a cup of coffee.",
-        "code": "WJ7M+QX Larnaca, Cyprus",
+        "description": "Cozy coffee shop in Larnaca downtown. There are 5-7 wellknown coffee origins, V60, Cold Brew and classic drinks. A small main hall and a large garden in the backyard. Few power outlets for digital nomads",
         "placeId": "ChIJGyOA68eD4BQRZtKA5kM_O0c"
       },
       "geometry": {
@@ -23,8 +22,7 @@
       "type": "Feature",
       "properties": {
         "name": "Uluwatu Specialty Coffee",
-        "description": "Freshly roasted coffee from Square Mile Coffee Roasters based in London and homemade artisan gelato",
-        "code": "M2GW+3J Limassol, Cyprus",
+        "description": "Large selection of coffee origins and comfortable sofas in the old town of Limassol. Few outlets only",
         "placeId": "ChIJbSttYBsz5xQR1h0m6ubX9g0"
       },
       "geometry": {
@@ -40,8 +38,7 @@
       "type": "Feature",
       "properties": {
         "name": "South Coast Specialty Coffee",
-        "description": null,
-        "code": "VJQP+WR Larnaca, Cyprus",
+        "description": "Large coffee shop in the Mackenzie beach area. Several classic coffee origins, tables with sockets and a separate playground for children",
         "placeId": "ChIJf2r8H92C4BQRClDxls7Viu4"
       },
       "geometry": {
@@ -57,8 +54,7 @@
       "type": "Feature",
       "properties": {
         "name": "Menta Speciality CoffeeShop ",
-        "description": "In House Roasting, Homemade Sweets",
-        "code": "5975+XF Nicosia, Cyprus",
+        "description": "Very small coffee shop with a few tables outside. Greek barista and the perfect V60 and Cold Brew",
         "placeId": "ChIJI3HxklcX3hQRHDVP87cbnIo"
       },
       "geometry": {
@@ -74,8 +70,7 @@
       "type": "Feature",
       "properties": {
         "name": "Kollaborative Coffee Roasters",
-        "description": "Specialty coffee roasters, merchants and fine drinking",
-        "code": "5984+RQ Nicosia, Cyprus",
+        "description": "Middle-size coffee shop and bar in Nicosia old town. Selection of coffee origins, few tables inside and outside",
         "placeId": "ChIJTf61IgAX3hQRCwEn_V1idxA"
       },
       "geometry": {
@@ -91,8 +86,7 @@
       "type": "Feature",
       "properties": {
         "name": "Nomad Bread & Coffee",
-        "description": "Sourdough bakery and specialty coffee house!",
-        "code": "M2MX+67 Limassol, Cyprus",
+        "description": "Small takeaway coffee shop in Limassol center with lots of coffee origins. No power sockets at all",
         "placeId": "ChIJaWe7ozQz5xQRUKPzaPpiOCk"
       },
       "geometry": {
