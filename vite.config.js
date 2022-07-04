@@ -7,6 +7,7 @@ export default mode => {
 
     return defineConfig({
         build: {
+            reportCompressedSize: false,
             rollupOptions: {
                 input: {
                     main: resolve(__dirname, 'index.html'),
