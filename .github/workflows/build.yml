@@ -1,4 +1,4 @@
-name: build with Vite
+name: build with Vite and deploy to Fly
 
 on:
   push:
