@@ -136,6 +136,6 @@ export default class Map {
 
         this.infowindow.setPosition(position)
         this.infowindow.setOptions({pixelOffset: {height: -42}})
-        this.infowindow.open(map)
+        this.infowindow.open({map, shouldFocus: false})
     };
 };
