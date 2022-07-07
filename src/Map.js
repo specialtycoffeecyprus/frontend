@@ -5,6 +5,7 @@ export default class Map {
     infowindow = {};
     placesService = {};
     markerClusterer = {};
+    analytics = {};
     dataUrl = import.meta.env.VITE_DATA_API_URL;
     map = {
         apiKey: import.meta.env.VITE_MAP_API_KEY,
@@ -17,9 +18,10 @@ export default class Map {
     };
 
 
-    constructor(loader, controls, markerClusterer) {
+    constructor(loader, controls, markerClusterer, analytics) {
         this.loader = loader;
         this.markerClusterer = markerClusterer;
+        this.analytics = analytics;
 
         this.loadMap().then(async map => {
             this.infowindow = new google.maps.InfoWindow();
@@ -137,5 +139,7 @@ export default class Map {
         this.infowindow.setPosition(position)
         this.infowindow.setOptions({pixelOffset: {height: -42}})
         this.infowindow.open({map, shouldFocus: false})
+
+        this.analytics.trackInfoWindow(itemDto.placeId, itemDto.name, itemDto.placeId);
     };
 };

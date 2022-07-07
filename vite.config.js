@@ -17,8 +17,12 @@ export default mode => {
         },
         plugins: [
             ViteRadar({
+                enableDev: true,
                 analytics: {
                     id: process.env.VITE_GA_ID,
+                    config: {
+                        debug_mode: true,
+                    }
                 },
             }),
         ],
