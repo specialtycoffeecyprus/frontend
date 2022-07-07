@@ -1,3 +1,5 @@
+import "./src/Sentry";
+
 import {Loader} from '@googlemaps/js-api-loader';
 import {MarkerClusterer} from "@googlemaps/markerclusterer";
 
