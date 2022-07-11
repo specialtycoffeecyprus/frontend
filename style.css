@@ -9,14 +9,36 @@ body {
 }
 
 nav {
-    align-content: center;
+    display: flex;
+    font-size: 1rem;
+    gap: 1rem;
+    max-width: fit-content;
+    margin: 10px auto;
+}
+
+nav a {
+    align-items: center;
     background: white;
     border-radius: 2px;
     box-shadow: rgba(0, 0, 0, 0.3) 0 1px 4px -1px;
-    display: grid;
-    font-size: 1rem;
+    display: flex;
     height: 40px;
-    margin: 10px auto;
-    max-width: fit-content;
-    padding: 0 2rem;
+    padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+    nav a {
+        padding: 0 2rem;
+    }
+}
+
+nav a .icon + .text {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    nav a .icon + .text {
+        display: initial;
+        margin-left: 0.5rem;
+    }
 }
