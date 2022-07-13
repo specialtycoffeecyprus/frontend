@@ -1,6 +1,7 @@
 *.sh
 .env.local
 .idea
+cafes.json
 dist
 http-client.*
 http-request.*
