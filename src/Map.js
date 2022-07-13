@@ -23,13 +23,15 @@ export default class Map {
         this.markerClusterer = markerClusterer;
         this.analytics = analytics;
 
-        this.loadMap().then(async map => {
+        Promise.all([this.loadMap(), this.loadData()]).then(([map, data]) => {
             this.infowindow = new google.maps.InfoWindow();
             this.placesService = new google.maps.places.PlacesService(map);
 
             map.controls[google.maps.ControlPosition.TOP_CENTER].push(controls.getControls());
 
-            const features = await this.loadData(this.dataUrl, map);
+            map.data.setMap(null)
+
+            const features = map.data.addGeoJson(data);
             const markers = this.createMarkers(features, map);
 
             new this.markerClusterer({map: map, markers: markers});
@@ -56,15 +58,14 @@ export default class Map {
     };
 
 
-    loadData(url, map) {
-        return new Promise((resolve) => {
-                map.data.setMap(null)
-
-                map.data.loadGeoJson(url, {}, (features) => {
-                    resolve(features)
-                })
+    loadData() {
+        return fetch(this.dataUrl).then(response => {
+            if (!response.ok) {
+                throw new Error(`${response.url} ${response.status} ${response.statusText}`);
             }
-        )
+
+            return response.json();
+        })
     }
 
 
