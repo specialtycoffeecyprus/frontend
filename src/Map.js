@@ -6,7 +6,7 @@ export default class Map {
     placesService = {};
     markerClusterer = {};
     analytics = {};
-    dataUrl = import.meta.env.VITE_DATA_API_URL;
+    dataUrl = import.meta.env.VITE_API_URL;
     map = {
         apiKey: import.meta.env.VITE_MAP_API_KEY,
         container: document.getElementById('map'),

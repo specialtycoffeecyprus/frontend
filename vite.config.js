@@ -18,7 +18,7 @@ export default mode => {
         plugins: [
             ViteRadar({
                 analytics: {
-                    id: process.env.VITE_GA_ID,
+                    id: process.env.VITE_GOOGLE_ANALYTICS_ID,
                 },
             }),
         ],
