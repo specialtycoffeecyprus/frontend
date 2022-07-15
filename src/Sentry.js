@@ -4,5 +4,4 @@ import {BrowserTracing} from "@sentry/tracing";
 Sentry.init({
     dsn: import.meta.env.VITE_SENTRY_DSN,
     integrations: [new BrowserTracing()],
-    tracesSampleRate: import.meta.env.VITE_SENTRY_TRACES_SAMPLE_RATE,
 });
