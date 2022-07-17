@@ -24,7 +24,6 @@ export default mode => {
             htmlPurge(),
             minify({
                 collapseBooleanAttributes: true,
-                collapseInlineTagWhitespace: true,
                 collapseWhitespace: true,
                 decodeEntities: true,
                 noNewlinesBeforeTagClose: true,
