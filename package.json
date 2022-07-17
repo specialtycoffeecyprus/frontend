@@ -17,6 +17,8 @@
     "dotenv": "^16",
     "normalize.css": "^8",
     "vite": "^2",
+    "vite-plugin-minify": "*",
+    "vite-plugin-html-purgecss": "*",
     "vite-plugin-radar": "*"
   }
 }
