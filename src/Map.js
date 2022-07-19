@@ -18,7 +18,7 @@ export default class Map {
     };
 
 
-    constructor(loader, controls, markerClusterer, analytics) {
+    constructor({loader, controls, markerClusterer, analytics}) {
         this.loader = loader;
         this.markerClusterer = markerClusterer;
         this.analytics = analytics;
@@ -71,10 +71,11 @@ export default class Map {
 
     createMarkers(features, map) {
         return features.map(feature => {
-            const details = new ItemDto(
-                feature.getProperty('placeId'),
-                feature.getProperty('name'),
-                feature.getProperty('description')
+            const details = new ItemDto({
+                    placeId: feature.getProperty('placeId'),
+                    name: feature.getProperty('name'),
+                    description: feature.getProperty('description')
+                }
             );
 
             const marker = new google.maps.Marker({position: feature.getGeometry().get()});

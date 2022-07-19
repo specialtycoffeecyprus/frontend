@@ -10,4 +10,9 @@ import Controls from "./src/Controls";
 import Analytics from "./src/Analytics";
 
 
-new Map(Loader, new Controls(), MarkerClusterer, new Analytics());
+new Map({
+    loader: Loader,
+    controls: new Controls(),
+    markerClusterer: MarkerClusterer,
+    analytics: new Analytics()
+});

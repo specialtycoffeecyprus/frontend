@@ -6,7 +6,7 @@ export default class ItemDto {
     #url = '';
 
 
-    constructor(placeId, name, description) {
+    constructor({placeId, name, description}) {
         this.#placeId = placeId;
         this.#name = name;
         this.#description = description;
