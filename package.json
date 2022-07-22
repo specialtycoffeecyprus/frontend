@@ -1,7 +1,24 @@
 {
   "name": "specialty-frontend",
-  "private": true,
-  "version": "0.0.0",
+  "description": "Frontend part of Specialty Coffee in Cyprus website",
+  "keywords": [
+    "frontend",
+    "specialty",
+    "coffee",
+    "coffeshop",
+    "cyprus"
+  ],
+  "homepage": "https://t.me/SpecialtyCoffeeCyBot",
+  "bugs": {
+    "email": "specialtycoffeecy@gmail.com",
+    "url": "https://github.com/specialtycoffeecyprus/specialty-frontend/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Vladimir Martsul",
+    "homepage": "https://t.me/vladimir_mvs",
+    "role": "Developer"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
