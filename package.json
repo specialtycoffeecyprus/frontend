@@ -29,11 +29,11 @@
     "@sentry/tracing": "*"
   },
   "devDependencies": {
-    "@googlemaps/js-api-loader": "^1",
-    "@googlemaps/markerclusterer": "^2",
-    "dotenv": "^16",
-    "normalize.css": "^8",
-    "vite": "^2",
+    "@googlemaps/js-api-loader": "*",
+    "@googlemaps/markerclusterer": "*",
+    "dotenv": "*",
+    "normalize.css": "*",
+    "vite": "*",
     "vite-plugin-minify": "*",
     "vite-plugin-html-purgecss": "*",
     "vite-plugin-radar": "*"
