@@ -78,7 +78,15 @@ export default class Map {
                 }
             );
 
-            const marker = new google.maps.Marker({position: feature.getGeometry().get()});
+            const marker = new google.maps.Marker({
+                label: {
+                    className: 'marker-label',
+                    text: details.name
+                },
+                icon: 'https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png',
+                title: details.name,
+                position: feature.getGeometry().get()
+            });
 
             marker.addListener('click', async () => this.showInfoWindow(await this.enrichDetails(details), marker.position, map));
 

@@ -6,3 +6,13 @@ body {
 #map {
     height: 100%;
 }
+
+.marker-label {
+    color: red !important;
+    position: absolute;
+    top: 5rem;
+    transform: translateX(-50%);
+    text-shadow: white 1px 1px;
+    width: 9rem;
+    white-space: normal;
+}

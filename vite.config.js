@@ -21,7 +21,7 @@ export default mode => {
             legalComments: "none"
         },
         plugins: [
-            htmlPurge(),
+            htmlPurge(['marker-label']),
             minify({
                 collapseBooleanAttributes: true,
                 collapseWhitespace: true,
