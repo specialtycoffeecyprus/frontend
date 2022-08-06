@@ -1,13 +1,13 @@
-import "./src/Sentry";
+import "./src/components/Sentry";
 
 import {Loader} from '@googlemaps/js-api-loader';
 import {MarkerClusterer} from "@googlemaps/markerclusterer";
 
-import Map from './src/Map';
-import './src/Map.css';
+import Map from './src/components/Map';
+import './src/components/Map.css';
 
-import Controls from "./src/Controls";
-import Analytics from "./src/Analytics";
+import Controls from "./src/components/Controls";
+import Analytics from "./src/components/Analytics";
 
 
 new Map({
