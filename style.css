@@ -42,3 +42,9 @@ nav a .icon + .text {
         margin-left: 0.5rem;
     }
 }
+
+.img-fluid {
+    height: auto;
+    max-width: 100%;
+    width: auto;
+}
