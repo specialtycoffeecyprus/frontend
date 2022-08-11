@@ -26,7 +26,7 @@ nav a {
     padding: 0 1rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 720px) {
     nav a {
         padding: 0 2rem;
     }
@@ -36,7 +36,7 @@ nav a .icon + .text {
     display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 720px) {
     nav a .icon + .text {
         display: initial;
         margin-left: 0.5rem;
