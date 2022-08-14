@@ -24,13 +24,11 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "dependencies": {
-    "@sentry/browser": "*",
-    "@sentry/tracing": "*"
-  },
   "devDependencies": {
     "@googlemaps/js-api-loader": "*",
     "@googlemaps/markerclusterer": "*",
+    "@sentry/browser": "*",
+    "@sentry/tracing": "*",
     "dotenv": "*",
     "normalize.css": "*",
     "vite": "*",
