@@ -1,5 +1,6 @@
 import {resolve} from 'path'
 import {defineConfig, loadEnv} from 'vite';
+import {createHtmlPlugin} from "vite-plugin-html";
 import ViteRadar from 'vite-plugin-radar'
 import htmlPurge from 'vite-plugin-html-purgecss'
 import minify from "vite-plugin-minify";
@@ -22,14 +23,17 @@ export default mode => {
         },
         plugins: [
             htmlPurge(['marker-label']),
+            createHtmlPlugin({minify: false}),
             minify({
                 collapseBooleanAttributes: true,
                 collapseWhitespace: true,
                 decodeEntities: true,
+                keepClosingSlash: false,
                 noNewlinesBeforeTagClose: true,
-                removeAttributeQuotes: true,
+                processConditionalComments: false,
                 removeComments: true,
                 removeEmptyAttributes: true,
+                removeEmptyElements: true,
                 removeRedundantAttributes: true,
                 removeScriptTypeAttributes: true,
                 removeStyleLinkTypeAttributes: true,
