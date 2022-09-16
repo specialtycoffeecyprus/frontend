@@ -14,7 +14,7 @@ export default class Map {
             latitude: parseFloat(import.meta.env.VITE_MAP_CENTER_LATITUDE),
             longitude: parseFloat(import.meta.env.VITE_MAP_CENTER_LONGITUDE),
         },
-        zoom: Math.round(Math.log(window.screen.width / 512)) + 9,
+        zoom: Math.log(window.screen.width / 512) + 8.6,
     };
 
 
