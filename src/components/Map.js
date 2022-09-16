@@ -54,6 +54,7 @@ export default class Map {
             zoom: this.map.zoom,
             mapTypeControl: false,
             streetViewControl: false,
+            zoomControl: false,
         });
     };
 
