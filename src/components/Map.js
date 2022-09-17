@@ -1,4 +1,5 @@
 import ItemDto from "./ItemDto";
+import isMobile from "./isMobile";
 
 export default class Map {
     loader = {};
@@ -14,7 +15,7 @@ export default class Map {
             latitude: parseFloat(import.meta.env.VITE_MAP_CENTER_LATITUDE),
             longitude: parseFloat(import.meta.env.VITE_MAP_CENTER_LONGITUDE),
         },
-        zoom: Math.log(window.screen.width / 512) + 8.6,
+        zoom: Math.log(window.screen.width / 512) + (isMobile ? 8.5 : 9),
     };
 
 
