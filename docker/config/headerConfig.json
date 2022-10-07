@@ -1,0 +1,68 @@
+{
+  "configs": [
+    {
+      "path": "*",
+      "fileExtension": "*",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=0, must-revalidate"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains;"
+        }
+      ]
+    },
+    {
+      "path": "*",
+      "fileExtension": "ico",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "path": "*",
+      "fileExtension": "ico",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "path": "*",
+      "fileExtension": "png",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "path": "*",
+      "fileExtension": "svg",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "path": "/assets/",
+      "fileExtension": "*",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}
