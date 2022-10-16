@@ -1,6 +1,5 @@
 body {
-    max-width: 80ch;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding: 0 2rem 2rem 2rem;
+    max-width: 120ch;
+    margin-inline: auto !important;
+    padding: 0 1rem 1rem 1rem;
 }
