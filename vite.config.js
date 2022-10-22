@@ -1,5 +1,6 @@
 import {resolve} from 'path'
 import {defineConfig, loadEnv} from 'vite';
+import replace from '@rollup/plugin-replace';
 import {createHtmlPlugin} from "vite-plugin-html";
 import ViteRadar from 'vite-plugin-radar'
 import htmlPurge from 'vite-plugin-html-purgecss'
@@ -22,6 +23,11 @@ export default mode => {
             legalComments: "none"
         },
         plugins: [
+            replace({
+                __SENTRY_DEBUG__: false,
+                __SENTRY_TRACING__: false,
+                preventAssignment: true,
+            }),
             htmlPurge(['marker-label']),
             createHtmlPlugin({minify: false}),
             minify({
