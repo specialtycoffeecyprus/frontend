@@ -27,7 +27,7 @@
   "devDependencies": {
     "@googlemaps/js-api-loader": "*",
     "@googlemaps/markerclusterer": "*",
-    "@rollup/plugin-replace": "^5.0.1",
+    "@rollup/plugin-replace": "*",
     "@sentry/browser": "*",
     "@sentry/tracing": "*",
     "dotenv": "*",
