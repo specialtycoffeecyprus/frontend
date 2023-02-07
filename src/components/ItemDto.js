@@ -1,24 +1,28 @@
 export default class ItemDto {
-    #placeId = '';
+    #id = 0;
     #name = '';
     #description = '';
-    #formattedAddress = '';
+    #region = '';
+    #placeId = '';
     #url = '';
 
 
-    constructor({placeId, name, description}) {
-        this.#placeId = placeId;
+    constructor({id, name, description, region, placeId, url}) {
+        this.#id = id;
         this.#name = name;
         this.#description = description;
+        this.#region = region;
+        this.#placeId = placeId;
+        this.#url = url;
     }
 
 
-    get placeId() {
-        return this.#placeId;
+    get id() {
+        return this.#id;
     }
 
-    set placeId(value) {
-        this.#placeId = value;
+    set id(value) {
+        this.#id = value;
     }
 
 
@@ -40,14 +44,22 @@ export default class ItemDto {
     }
 
 
-    get formattedAddress() {
-        return this.#formattedAddress;
+    get region() {
+        return this.#region;
     }
 
-    set formattedAddress(value) {
-        this.#formattedAddress = value;
+    set region(value) {
+        this.#region = value;
     }
 
+
+    get placeId() {
+        return this.#placeId;
+    }
+
+    set placeId(value) {
+        this.#placeId = value;
+    }
 
     get url() {
         return this.#url;
