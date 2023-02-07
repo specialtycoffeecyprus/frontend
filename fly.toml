@@ -11,7 +11,7 @@ allowed_public_ports = []
 auto_rollback = true
 
 [[services]]
-internal_port = 8043
+internal_port = 8080
 processes = ["app"]
 protocol = "tcp"
 script_checks = []

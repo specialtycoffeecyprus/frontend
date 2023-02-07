@@ -1,4 +1,6 @@
-﻿FROM pierrezemb/gostatic
-COPY docker/config/headerConfig.json /config/
-COPY dist/ /srv/http/
-ENTRYPOINT ["/goStatic", "-fallback", "/index.html"]
+﻿FROM nginx:alpine-slim
+
+#RUN apk add --update --no-cache nginx-mod-http-brotli
+
+COPY docker/ /
+COPY dist/ /usr/share/nginx/html/
