@@ -36,7 +36,7 @@ server {
     server_name specialtycoffee.cy;
 
     root /usr/share/nginx/html;
-	try_files $uri /index.html;
+	try_files $uri $uri/index.html /index.html;
 
 	location = /manifest.webmanifest {
 		default_type application/manifest+json;
