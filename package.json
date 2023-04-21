@@ -29,7 +29,6 @@
     "@googlemaps/markerclusterer": "*",
     "@rollup/plugin-replace": "*",
     "@sentry/browser": "*",
-    "@sentry/tracing": "*",
     "dotenv": "*",
     "normalize.css": "*",
     "vite": "*",
