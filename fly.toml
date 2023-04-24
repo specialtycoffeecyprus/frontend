@@ -12,7 +12,7 @@ force_https = true
 
 [[services.ports]]
 port = 443
-handlers = ["tls"]
+handlers = ["tls", "http"]
 
 [[services.http_checks]]
 interval = "10s"
