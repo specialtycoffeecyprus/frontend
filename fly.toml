@@ -1,12 +1,9 @@
 app = "specialty-frontend"
-kill_signal = "SIGINT"
-kill_timeout = 5
 primary_region = "ams"
 
 [[services]]
 protocol = "tcp"
 internal_port = 8080
-processes = ["app"]
 
 [[services.ports]]
 port = 80
@@ -15,18 +12,12 @@ force_https = true
 
 [[services.ports]]
 port = 443
-handlers = ["tls", "http"]
-
-[services.concurrency]
-type = "connections"
-hard_limit = 25
-soft_limit = 20
+handlers = ["tls"]
 
 [[services.http_checks]]
 interval = "10s"
 timeout = "1s"
 grace_period = "5s"
-restart_limit = 0
 method = "get"
 path = "/"
 protocol = "http"
