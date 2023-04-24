@@ -1,7 +1,5 @@
 error_log /dev/stderr;
 
-server_tokens off;
-
 tcp_nopush on;
 reset_timedout_connection on;
 
