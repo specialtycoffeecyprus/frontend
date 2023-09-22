@@ -1,5 +1,5 @@
 {
-  "name": "specialty-frontend",
+  "name": "frontend",
   "description": "Frontend part of Specialty Coffee in Cyprus website",
   "keywords": [
     "frontend",
@@ -11,7 +11,7 @@
   "homepage": "https://specialtycoffee.cy/",
   "bugs": {
     "email": "hi@specialtycoffee.cy",
-    "url": "https://github.com/specialtycoffeecyprus/specialty-frontend/issues"
+    "url": "https://github.com/specialtycoffeecyprus/frontend/issues"
   },
   "license": "MIT",
   "author": {
