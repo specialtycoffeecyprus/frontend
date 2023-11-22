@@ -33,14 +33,7 @@ nav a {
 }
 
 nav a .icon + .text {
-    display: none;
-}
-
-@media (min-width: 768px) {
-    nav a .icon + .text {
-        display: initial;
-        margin-left: 0.5rem;
-    }
+    margin-left: 0.5rem;
 }
 
 p + p {
