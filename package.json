@@ -31,7 +31,7 @@
     "@sentry/browser": "*",
     "dotenv": "*",
     "normalize.css": "*",
-    "vite": "*",
+    "vite": "^4",
     "vite-plugin-compression": "*",
     "vite-plugin-html-purgecss": "*",
     "vite-plugin-minify": "*",
